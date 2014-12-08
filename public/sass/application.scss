@@ -77,8 +77,8 @@ a {
 }
 
 .wrapper {
-    max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
-    max-width:         calc(800px - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(1200px - (#{$spacing-unit} * 2));
+    max-width:         calc(1200px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -86,8 +86,8 @@ a {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(800px - (#{$spacing-unit}));
-        max-width:         calc(800px - (#{$spacing-unit}));
+        max-width: -webkit-calc(1200px - (#{$spacing-unit}));
+        max-width:         calc(1200px - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
@@ -111,12 +111,14 @@ a {
 }
 
 #logo {
-    width: 30%;
+    width: 100%;
     height: auto;
     margin-right: 80%;
-    margin-bottom: 10%;
-    max-width: 90%;
-    float: left;
+    max-width: 100%;
+    border: 1px solid white;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
 }
 
 .home {
@@ -150,13 +152,11 @@ a {
     margin-bottom: 1%;
 }
 #intro-wrapper {
-    padding: 2%;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    border: 1px solid $grey-color-light;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 3%;
+
 }
 
 #intro-text {
@@ -167,4 +167,18 @@ a {
     padding: 1%;
     margin-top: 1%;
     border-bottom: 1px solid $grey-color-light;
+}
+
+.data-table{
+    align: left;
+    width: 100%;
+    border: 2px solid $grey-color-light;
+
+}
+
+.data-cells{
+    text-align: left;
+    width: 10%;
+    height: auto;
+    padding: 2%;
 }
