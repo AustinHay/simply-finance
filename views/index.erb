@@ -19,10 +19,10 @@
 		</script>
 	</head>
 
-  <body style="background-color: rgba(0, 0, 0, 0.88)">
+  <body>
   	<div class="wrapper">
 
-  		<div class="home" class="page-content" >
+  		<div class="home page-content background">
 			<img id="logo" src="/images/finance-logo.png">
   		
   			<div id="intro-wrapper">	
@@ -32,48 +32,49 @@
   				</p>
 
   				<p id="intro-text">
-  				<h3>Subtitle:</h3>
-  					Insert text here.
-  				</p>
+  				<h3>Stock tickers:</h3>
+  					
 
-  				<p id="intro-text">
-  				<h3>Subtitle:</h3>
-  					Insert text here.
-  				</p>
-  			</div>
-
-  <table class="data-table">
-
-          <tr class="data-cells">
-            <% for x in 0...@num %>
-              <b><%= p @metric_names[x] %></b>
-          </tr>
-            <% end %>
-            </br>
-        
-          <tr class="data-cells">
-            <% for x in 0...@num %>
-                <b><%= p @data[x].symbol %></b>
-                <%= p @data[x].change %>
-                <%= p @data[x].ask %>
-                <%= p @data[x].bid %>
-                <%= p @data[x].moving_average_50_day %>
-                <%= p @data[x].moving_average_200_day %>
-                <%= p @data[x].after_hours_change_real_time %>
-                <%= p @data[x].earnings_per_share %>
-                <%= p @data[x].eps_estimate_next_quarter %>
-                <%= p @data[x].dividend_yield %>
-                <%= p @data[x].ex_dividend_date %>
-                <%= p @data[x].pe_ratio %>
-                <%= p @data[x].high_52_weeks %>
-                <%= p @data[x].low_52_weeks %>
-                <%= p @data[x].annualized_gain %>
-                <%= p @data[x].market_capitalization %>
-          </tr>
+  				<form method="post" enctype="multipart/form-data">
+            <input type="file" name="uploaded_stocks">
           </br>
+            <input type="submit" value="Upload Stock Tickers" class="button">
+          </form>
+          </p>
+
+        <div class="data-table">
+  <table>
+
+          <tr>
+            <% for x in 0...@metric_names.count %>
+              <td><b><%= p @metric_names[x] %></b>   
+            <% end %>
+              </td>
+          </tr>
+        
+          <tr>
+            <% for x in 0...@stocks.count %>
+
+                <td><b><%= p @data[x].symbol %></b></td>
+                <td><%= p @data[x].last_trade_price %></td>
+                <td><%= p @data[x].change %></td>
+                <td><%= p @data[x].close %></td>
+                <td><%= p @data[x].ex_dividend_date %></td>
+                <td><%= p @data[x].dividend_yield %></td>
+                <td><%= p @data[x].high_52_weeks %>v
+                <td><%= p @data[x].low_52_weeks %></td>
+                <td><%= p @data[x].moving_average_50_day %></td>
+                <td><%= p @data[x].moving_average_200_day %></td>
+                <td><%= p @data[x].after_hours_change_real_time %></td>
+                <td><%= p @data[x].earnings_per_share %></td>
+                <td><%= p @data[x].eps_estimate_next_quarter %></td>
+                <td><%= p @data[x].pe_ratio %></td>
+                <td><%= p @data[x].market_capitalization %></td>
+          </tr>
           <% end %>
         
     </table>
+  </div>
 
 		</div>
 	</div>

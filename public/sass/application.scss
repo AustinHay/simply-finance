@@ -76,21 +76,19 @@ a {
     }
 }
 
+
 .wrapper {
-    max-width: -webkit-calc(1200px - (#{$spacing-unit} * 2));
-    max-width:         calc(1200px - (#{$spacing-unit} * 2));
+    max-width: -webkit-calc(1600px - (#{$spacing-unit} * 2));
+    max-width:         calc(1600px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     @extend %clearfix;
+   }
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(1200px - (#{$spacing-unit}));
-        max-width:         calc(1200px - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+html {
+background-color: #2C3E50;
 }
 
 .page-content {
@@ -98,6 +96,7 @@ a {
 }
 
 .background {
+
 	padding: 0;
     margin: 0;
     height: cover;
@@ -124,7 +123,7 @@ a {
 .home {
     font-family: $base-font-family;
     font-weight: 200;
-    color:black;
+    font-color:#6C7A89;
     width:auto;
     vertical-align: middle;
     font-size:100%;
@@ -143,7 +142,7 @@ a {
 #title {
     margin: 0;
     font-family: $base-font-family;
-    color:black;
+    color:22313F;
     font-weight: 200;
     vertical-align: middle;
     text-align: left;
@@ -151,34 +150,39 @@ a {
     margin-top: 1%;
     margin-bottom: 1%;
 }
+
 #intro-wrapper {
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 5%;
     margin-bottom: 3%;
-
 }
 
 #intro-text {
     margin-bottom: 3%;
 }
 
-.results {
-    padding: 1%;
-    margin-top: 1%;
-    border-bottom: 1px solid $grey-color-light;
-}
-
 .data-table{
+    overflow-x: scroll;
     align: left;
-    width: 100%;
-    border: 2px solid $grey-color-light;
-
+    padding: 1%;
+    border: 2px solid $grey-color-dark; 
 }
 
-.data-cells{
-    text-align: left;
-    width: 10%;
-    height: auto;
-    padding: 2%;
+
+table {    
+    border-spacing: 35px 10px;
 }
+
+tr {
+    white-space: nowrap;
+    font-family: HelveticaNeue-Light;
+    font-weight: 100;
+    font-size: 100%;
+    border-top: 1px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-dark;
+    border: collapse;
+}
+
+
+
